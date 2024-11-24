@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Happy Teachers's Day- Ibu Eri Febriantini</title>
+    <style>
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        .wiggle {
+            animation: wiggle 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-blue-500 text-white p-6 text-center">
+        <h1 class="text-3xl font-bold">Happy Teachers' Day, Ibu Eri Febriantini!</h1>
+        <p class="mt-2">Celebrating ur special day, ibu :) </p>
+    </header>
+
+    <main class="p-6">
+        <section class="my-4">
+            <h2 class="text-2xl font-semibold">Messages for Ibu Eri</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <h3 class="font-bold wiggle">haloo ibuu >_< </h3>
+                <p>Subject: Website Programming</p>
+                <p>
+                    Di Hari Guru ini, saya ingin mengucapkan terima kasih yang sebesar-besarnya kepada Ibu Eri Febriantini, guru pemrograman web saya, yang telah memberikan banyak ilmu, bimbingan, dan inspirasi. Ibu Eri tidak hanya mengajarkan keterampilan teknis yang sangat berguna di dunia pemrograman, tetapi juga mengajarkan kami untuk selalu berpikir kreatif, teliti, dan pantang menyerah dalam menghadapi tantangan. Dengan kesabaran dan dedikasi yang luar biasa, Ibu telah membantu saya dan teman-teman memahami konsep-konsep yang sulit dan menjadikannya lebih mudah untuk dipahami. Semoga Ibu selalu diberikan kesehatan dan kesuksesan, serta terus menjadi sumber inspirasi bagi banyak generasi penerus.
+                     Terima kasih, Ibu Eri,
+                      atas segala ilmu dan perhatian yang telah Ibu berikan! -ulfah</p>
+            </div>
+        </section>
+
+        <section class="my-4">
+            <h2 class="text-2xl font-semibold">Messages from Ibu Eri</h2>
+            <div id="messageBoard" class="bg-white p-4 rounded-lg shadow-lg">
+                <p>Terimakasih ibu telah mengajarkan dan mengenalkan kepada ulfah mengenai pemograman web</p>            </div>
+            <div class="mt-4">
+                <input type="text" id="messageInput" class="border p-2 rounded w-full" placeholder="Type your message here...">
+                <button id="submitMessage" class="bg-blue-500 text-white p-2 rounded mt-2">Send Message</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-500 text-white p-4 text-center">
+        <audio id="backgroundMusic" controls autoplay loop>
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="mt-2">
+            <button id="playButton" class="bg-green-500 text-white p-2 rounded">Play</button>
+            <button id="pauseButton" class="bg-red-500 text-white p-2 rounded">Pause</button>
+        </div>
+        <p class="mt-2">Enjoy the music and celebrate Ibu Eri!</p>
+    </footer>
+
+    <script>
+        // Handle message submission
+        document.getElementById('submitMessage').addEventListener('click', function() {
+            const messageInput = document.getElementById('messageInput');
+            const messageBoard = document.getElementById('messageBoard');
+
+            if (messageInput.value.trim() !== '') {
+                const newMessage = document.createElement('p');
+                newMessage.textContent = `Mrs. Eri says: ${messageInput.value}`;
+                messageBoard.appendChild(newMessage);
+                messageInput.value = ''; // Clear the input
+            }
+        });
+
+        // Music control
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        document.getElementById('playButton').addEventListener('click', function() {
+            backgroundMusic.play();
+        });
+
+        document.getElementById('pauseButton').addEventListener('click', function() {
+            backgroundMusic.pause();
+        });
+    </script>
+
+</body>
+</html>
